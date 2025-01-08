@@ -6,6 +6,7 @@
 #include "xp.h"
 #include "stats.h"
 #include <vector>
+#include "item.h"
 
 struct Player
 {
@@ -27,7 +28,26 @@ struct Player
         {
             std::cout << "- " << Item.name << "\n";
         }
-        
+    }
+
+    void addItem(const Item& item){
+        inventory.push_back(item);
+        stats.applyItem(item);
+        std::cout << "Item added to inventory. Stats upgraded\n";
+    }
+
+    void removeItem(const std::string& itemName){
+        for (auto it = inventory.begin(); it != inventory.end(); it++)
+        {
+            if (it->name == itemName)
+            {
+                stats.removeItem(*it);
+                inventory.erase(it);
+                std::cout << "item deleted, stats updated\n";
+                return;
+            }
+            std::cout << "item not found in the inventory\n";
+        }
     }
 };
 

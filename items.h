@@ -5,5 +5,6 @@
 #include "item.h"
 
 std::vector<Item> getPredefinedItems();
+void dropItems (Player& player);
 
 #endif // ITEMS_H

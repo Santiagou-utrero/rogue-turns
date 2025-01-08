@@ -8,13 +8,13 @@ struct Stats
     int defense;
     int speed;
 
-    void applyItem(Item& item){
+    void applyItem(const Item& item){
         strenght += item.strenght;
         defense += item.defense;
         speed += item.speed;
     }
 
-    void removeItem(Item& item){
+    void removeItem(const Item& item){
         strenght -= item.strenght;
         defense -= item.defense;
         speed -= item.speed;

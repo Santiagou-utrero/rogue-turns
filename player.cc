@@ -13,7 +13,7 @@ Player createPlayer (const std::string &name, const Stats& stats){
 
 Player chooseCharacter(){
     Player warrior = createPlayer("Warrior", {200, 30, 20, 0});
-    Player thief = createPlayer("Thief", {120, 15, 0, 15});
+    Player thief = createPlayer("Thief", {120, 15, 0, 10});
     Player archer = createPlayer("Archer", {100, 20, 10, 20});
     Player mage = createPlayer("Mage", {100, 40, 0, 0});
     Player uriel = createPlayer("Uriel", {90, 10, 10, 30});
