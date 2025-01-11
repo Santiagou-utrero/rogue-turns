@@ -8,6 +8,7 @@
 #include <vector>
 #include "item.h"
 
+
 struct Player
 {
     std::string name;
@@ -50,5 +51,6 @@ struct Player
         }
     }
 };
-
+Player createPlayer (const std::string &name, const Stats& stats);
+Player chooseCharacter();
 #endif

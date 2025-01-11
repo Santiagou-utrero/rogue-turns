@@ -6,6 +6,9 @@
 #include "item.h"
 #include "player.h"
 
+#ifndef ENEMIES_H
+#define ENEMIES_H
+
 struct Enemies
 {
     std::string name;
@@ -21,3 +24,8 @@ struct Enemies
     }
 };
  
+ std::vector<Enemies> getPredefinedEnemies();
+ Enemies createEnemy(const std::string& name, const Stats& stats);
+ Enemies randomEnemey (const std::vector<Enemies>& enemies);
+ 
+ #endif

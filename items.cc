@@ -8,15 +8,15 @@
 
 std::vector<Item> getPredefinedItems(){
     return{
-        Item("Club", 10, 0, -2, "weapon"),
-        Item("Ninnja Mask", 2, 4, 3, "armor"),
-        Item("Short Sword", 5, 0, 0, "weapon"),
-        Item("Dagger", 3, -2, 2, "weapon"),
-        Item("Archer clothes", 0, 10, 3, "armor"),
-        Item("Big Hammer", 20, 0, -7, "weapon"),
-        Item("Simple Boots", 0, 3, 2, "armor"),
-        Item("Life potion", 0, 0, 0, "consumable"),
-        Item("Speed potion", 0, 0, 3, "consumable"),
+        Item("Club", 10, 0, -2, "weapon", false),
+        Item("Ninnja Mask", 2, 4, 3, "armor", false),
+        Item("Short Sword", 5, 0, 0, "weapon", false),
+        Item("Dagger", 3, -2, 2, "weapon", false),
+        Item("Archer clothes", 0, 10, 3, "armor", false),
+        Item("Big Hammer", 20, 0, -7, "weapon", false),
+        Item("Simple Boots", 0, 3, 2, "armor", false),
+        Item("Life potion", 0, 0, 0, "consumable", true),
+        Item("Speed potion", 0, 0, 3, "consumable", true),
     };
 }
 
@@ -36,5 +36,4 @@ void dropItems (Player& player){
     } else{
         std::cout << "no items available for drop\n";
     }
-    
 }

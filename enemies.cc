@@ -10,6 +10,7 @@ Enemies createEnemy(const std::string& name, const Stats& stats){
     Enemies enemies;
     enemies.name = name;
     enemies.stats = stats;
+    return enemies;
 };
 
 std::vector<Enemies> getPredefinedEnemies(){
@@ -29,4 +30,4 @@ Enemies randomEnemey (const std::vector<Enemies>& enemies){
     std::mt19937 gen(rd());
     std::uniform_int_distribution<> dis(0, enemies.size() - 1);
     return enemies[dis(gen)];
-}
+};
