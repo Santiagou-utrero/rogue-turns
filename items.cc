@@ -9,7 +9,7 @@
 std::vector<Item> getPredefinedItems(){
     return{
         Item("Club", 10, 0, -2, "weapon", false),
-        Item("Ninnja Mask", 2, 4, 3, "armor", false),
+        Item("Ninja Mask", 2, 4, 3, "armor", false),
         Item("Short Sword", 5, 0, 0, "weapon", false),
         Item("Dagger", 3, -2, 2, "weapon", false),
         Item("Archer clothes", 0, 10, 3, "armor", false),
