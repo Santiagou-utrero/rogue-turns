@@ -15,14 +15,21 @@ std::vector<Item> getPredefinedItems(){
         Item("Archer clothes", 0, 10, 3, "armor", false),
         Item("Big Hammer", 20, 0, -7, "weapon", false),
         Item("Simple Boots", 0, 3, 2, "armor", false),
-        Item("Life potion", 0, 0, 0, "consumable", true),
+        Item("Life potion", 20, 0, 0, "consumable", true),
         Item("Speed potion", 0, 0, 3, "consumable", true),
     };
 }
 
 void dropItems (Player& player){
     auto items = getPredefinedItems();
-    if (!items.empty())
+
+        //numero random para hacer un 50/50 de que te toque item o no
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_int_distribution<> dis(0, 1);
+        int random = dis(gen);
+
+    if (!items.empty() && random == 1)
     {
         std::random_device rd;
         std::mt19937 gen(rd());

@@ -9,8 +9,8 @@ void attack(Player& player, Enemies& enemy){
     damage = (damage > 0) ? damage: 1;
     enemy.stats.hp -= damage;
 
-    std::cout << player.name << "attacked" << enemy.name
-              << " for " << damage << " points of damage\n";
+    std::cout << player.name << " attacked: " << enemy.name
+              << " for: " << damage << " points of damage\n";
 
     if (enemy.stats.hp <= 0)
     {
@@ -23,22 +23,29 @@ void defense(Player& player){
     player.stats.defense += defenseStance;
 
     std::cout << player.name << " | Has incresed defense by: "
-              << defenseStance << "temporarily.\n";
+              << defenseStance << " temporarily.\n";
 }
 
-void consumeItem(Player& player, std::string& itemName){
-    for (auto it = player.inventory.begin(); it != player.inventory.end(); it++)
+bool consumeItem(Player& player, std::string& itemName){
+    for (auto it = player.inventory.begin(); it != player.inventory.end();)
     {
         if (it->name == itemName && it->isConsumable)
         {
             player.stats.applyItem(*it);
             player.inventory.erase(it);
-            std::cout << player.name << " consumed: " << itemName << " and gained its effects.\n";
-            return;
+            std::cout << player.name << " consumed: " << itemName << " and gained its effects:\n";
+
+            //para testear si se aplico correctamente
+            player.showInfo();
+
+            return true;
+        }else{
+            it++;
         }
         
     }
     std::cout << "No consumable item named: " << itemName << " found in the inventory\n"; 
+    return false;
 }
 
 void enemyAttack(Enemies& enemy, Player& player){
@@ -47,11 +54,11 @@ void enemyAttack(Enemies& enemy, Player& player){
     player.stats.hp -= enemyDamage;
     
     std::cout << enemy.name << " attaked: " << player.name
-              << "for: " << enemyDamage << " points of damage.\n";
+              << " for: " << enemyDamage << " points of damage.\n";
               
     if (player.stats.hp <= 0)
     {
-        std::cout << "Player: " << player.name << "| has been defeated\n";
+        std::cout << "Player: " << player.name << " | has been defeated\n";
     }
     
 }

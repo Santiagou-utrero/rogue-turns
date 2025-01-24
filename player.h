@@ -32,9 +32,18 @@ struct Player
     }
 
     void addItem(const Item& item){
-        inventory.push_back(item);
-        stats.applyItem(item);
-        std::cout << "Item added to inventory. Stats upgraded\n";
+
+        if (!item.isConsumable)
+        {
+            inventory.push_back(item);
+            stats.applyItem(item);
+            std::cout << "Item added to inventory. Stats upgraded\n";
+        } else {
+            inventory.push_back(item);
+            std::cout << "Consumable item obtained \n";
+        }
+        
+        
     }
 
     void removeItem(const std::string& itemName){

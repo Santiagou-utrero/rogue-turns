@@ -22,7 +22,7 @@ Player chooseCharacter(){
     std::cout << "Choose your adventurer: \n";
     std::cout << "1.Warrior: Good HP, DMG, DF but no SPD\n"
               << "2.Thief: Less HP, good DMG and SPD\n"
-              << "3.Archer: Less HP, good DMG and no SPD\n"
+              << "3.Archer: Less HP, good DMG and good SPD\n"
               << "4.Mage: Less HP, good DMG and no SPD\n"
               << "5.Uriel: Less HP, bad DMG, bad DF but very high SPD\n"
               << "6.Manu: very high HP, high defense, bad DMG and SPD\n";

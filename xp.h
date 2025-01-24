@@ -1,10 +1,9 @@
 #ifndef XP_H
 #define XP_H
-
 struct xp_logic
 {
     int xp = 0;
-    int xpToLevelUp = 20;
+    int xpToLevelUp;
     int level = 1;
 };
 

@@ -9,7 +9,7 @@
 
 void attack(Player& player, Enemies& enemy);
 void defense(Player& player);
-void consumeItem(Player& player, std::string& itemName);
+bool consumeItem(Player& player, std::string& itemName);
 void enemyAttack(Enemies& enemy, Player& player);
 
 
