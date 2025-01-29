@@ -48,7 +48,7 @@ void combatStart(Player& player, Enemies& enemy){
             {
                 if (i->isConsumable)
                 {
-                   std::cout << i->name << ", ";
+                   std::cout << "- " << i->name << "\n";
                 }
             }
 

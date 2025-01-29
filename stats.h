@@ -9,15 +9,16 @@ struct Stats
     int speed;
 
     void applyItem(const Item& item){
-        strenght += item.strenght;
-        defense += item.defense;
-        speed += item.speed;
+        if (item.strenght != 0) strenght += item.strenght;
+        if (item.defense != 0) defense += item.defense;
+        if (item.speed != 0) speed += item.speed;
+
     }
 
     void removeItem(const Item& item){
-        strenght -= item.strenght;
-        defense -= item.defense;
-        speed -= item.speed;
+        if (item.strenght != 0) strenght -= item.strenght;
+        if (item.defense != 0) defense -= item.defense;
+        if (item.speed != 0) speed -= item.speed;
     }
 };
 

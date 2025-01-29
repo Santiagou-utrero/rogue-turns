@@ -22,8 +22,8 @@ struct Player
         std::cout << "Level: " << xp.level << " | Xp: " << xp.xp << " / " << xp.xpToLevelUp << "\n";
         std::cout << "HP: " << stats.hp
                   << " | Strenght: " << stats.strenght
-                  << " | Defense: " << stats.strenght
-                  << " | Speed: " << stats.strenght << '\n';
+                  << " | Defense: " << stats.defense
+                  << " | Speed: " << stats.speed << '\n';
         std::cout << "Inventory:\n";
         for (const auto& Item : inventory)
         {

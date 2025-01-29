@@ -34,10 +34,6 @@ bool consumeItem(Player& player, std::string& itemName){
             player.stats.applyItem(*it);
             player.inventory.erase(it);
             std::cout << player.name << " consumed: " << itemName << " and gained its effects:\n";
-
-            //para testear si se aplico correctamente
-            player.showInfo();
-
             return true;
         }else{
             it++;

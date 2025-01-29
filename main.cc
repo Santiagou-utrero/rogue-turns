@@ -12,6 +12,7 @@
 #include "turns.h"
 #include <ctime>
 #include <cstdlib>
+#include <limits>
 
 const char pixel = char(219);
 
@@ -54,6 +55,12 @@ int main() {
     int x = 10, y = 10;
 
     printLogo();
+    std::cout << "\n";
+
+    std::cout << "Press ENTER to begin the adventure\n";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cin.get();
+    
     Player player = chooseCharacter();
     generateMap(map, x, y);
     printMap(map);

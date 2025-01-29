@@ -10,6 +10,7 @@
 #include "map.h"
 #include <thread>
 #include <chrono>
+#include "actions.h"
 
 const char enemyPixel = 'E';
 const char playerPixel = 'P';
@@ -123,14 +124,14 @@ void movePlayer(Player& player,std::vector<std::vector<char>>& map){
     bool playing = true;
     while (playing)
     {
-        std::cout << "Use WASD to move: \n";
-        char move;
-        std::cin >> move;
+        std::cout << "Use WASD to move, E for inventory and C for consumable: \n";
+        char action;
+        std::cin >> action;
 
         int newX = playerX;
         int newY = playerY;
 
-        switch (move)
+        switch (action)
         {
         case 'w':
             newX--;
@@ -144,6 +145,34 @@ void movePlayer(Player& player,std::vector<std::vector<char>>& map){
         case 'd':
             newY++;
             break;
+        case 'e':
+            player.showInfo();
+            continue;
+        case 'c': {
+            std::cout << "Your consumable items: \n";
+            for (const auto& item : player.inventory)
+            {
+                if (item.isConsumable)
+                {
+                    std::cout << "- " << item.name << "\n";
+                }
+            }
+            
+            std::string itemName;
+            std::cout << "Enter the name of the item you want to consume: ";
+            std::cin.ignore();
+            std::getline(std::cin, itemName);
+
+            if (consumeItem(player, itemName))
+            {
+                std::cout << "Item consumed succesfully\n";
+            }else{
+                std::cout << "item not found or not consumed\n";
+            }
+            
+            continue;
+        }
+            
         default:
             std::cout << "invalid move. Use W, A, S, or D. \n";
             continue;

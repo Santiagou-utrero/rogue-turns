@@ -15,13 +15,13 @@ Enemies createEnemy(const std::string& name, const Stats& stats){
 
 std::vector<Enemies> getPredefinedEnemies(){
     return{
-        createEnemy("Baby Dragon", {100, 20, 10, 10}),
-        createEnemy("Slime", {100, 10, 0, 0}),
-        createEnemy("Bat", {50, 15, 0, 15}),
-        createEnemy("Goblin", {100, 10, 10, 10}),
-        createEnemy("Armored Goblin", {200, 20, 20, 0}),
-        createEnemy("Great Slime", {300, 30, 40, -10}),
-        createEnemy("Berserker", {200, 40, 0, 20}),
+        createEnemy("Baby Dragon", {20, 5, 10, 5}),
+        createEnemy("Slime", {30, 5, 0, 0}),
+        createEnemy("Bat", {25, 5, 0, 10}),
+        createEnemy("Goblin", {100, 10, 0, 0}),
+        createEnemy("Armored Goblin", {150, 10, 10, 0}),
+        createEnemy("Great Slime", {200, 15, 0, -10}),
+        createEnemy("Berserker", {130, 30, 0, 10}),
     };
 };
 

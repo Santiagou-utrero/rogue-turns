@@ -12,12 +12,12 @@ Player createPlayer (const std::string &name, const Stats& stats){
 }
 
 Player chooseCharacter(){
-    Player warrior = createPlayer("Warrior", {200, 30, 20, 0});
-    Player thief = createPlayer("Thief", {120, 15, 0, 10});
-    Player archer = createPlayer("Archer", {100, 20, 10, 20});
-    Player mage = createPlayer("Mage", {100, 40, 0, 0});
-    Player uriel = createPlayer("Uriel", {90, 10, 10, 30});
-    Player manu = createPlayer("Manu", {300, 5, 30, 5});
+    Player warrior = createPlayer("Warrior", {100, 15, 10, 0});
+    Player thief = createPlayer("Thief", {70, 20, 0, 5});
+    Player archer = createPlayer("Archer", {80, 10, 5, 2});
+    Player mage = createPlayer("Mage", {60, 25, 0, 0});
+    Player uriel = createPlayer("Uriel", {90, 10, 0, 5});
+    Player manu = createPlayer("Manu", {140, 5, 30, 0});
 
     std::cout << "Choose your adventurer: \n";
     std::cout << "1.Warrior: Good HP, DMG, DF but no SPD\n"
